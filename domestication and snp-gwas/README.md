@@ -40,7 +40,7 @@ grep -v chr00 input.EMMAX.ps > inputfile.txt
 ~/miniconda3/bin/R < work.R --vanilla
 grep -v x output.txt | paste inputfile.txt - > FDR.input.EMMAX.ps
 ```
-### Extract vandidate gene information
+### Extract candidate gene information
 ```
 for i in `cat phenotype.list`; do python3 tet.gwas.candidate.genes.py -gwas FDR.$i.EMMAX.ps -the 5.5 -ann snp.annotation.all.result -gene genes.annotation.infor -o FDR.$i.out.xls ; done
 ```
