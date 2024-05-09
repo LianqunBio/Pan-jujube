@@ -1,4 +1,4 @@
-### Step1, creating index file for reference genome
+### Step1, create index file for reference genome
 
 ```
 java -jar ~/software/picard-tools-1.118/CreateSequenceDictionary.jar R=Ref.fa O=Ref.dict
@@ -6,7 +6,7 @@ samtools faidx Ref.fa
 bwa index Ref.fa
 ```
 
-### Step2, mapping whole-genome-sequencing data to reference genome and get gvcf file for each sample
+### Step2, map whole-genome-sequencing data to reference genome and get gvcf file for each sample
 
 ```
 bwa mem -M -R  "@RG\tID:SampleID\tLB:SampleID\tPL:ILLUMINA\tSM:SampleID" Ref.fa SampleID.R1.fq.gz SampleID.R2.fq.gz  > SampleID.sam 
@@ -39,7 +39,7 @@ gatk SelectVariants -select-type INDEL -V Chr$i.combined.vcf -O Chr$i.indel.vcf.
 gatk VariantFiltration -V Chr$i.indel.vcf.gz --filter-expression "QD < 2.0" --filter-name "LowQD" --filter-expression "MQ < 40.0" --filter-name "MQ40.0" --filter-expression "FS > 200.0" --filter-name "FS200" --filter-expression "SOR > 10.0" --filter-name "SOR10" --filter-expression "MQRankSum < -12.5" --filter-name "MQRankSum-12.5" --filter-expression "ReadPosRankSum < -8.0" --filter-name "ReadPosRankSum-8.0" -O Chr$i.filter.indel.vcf.gz
 ```
 
-### Step5, filtering variations located in TE region
+### Step5, filter variations located in TE region
 
 ```
 python3 exclude.TE.py # input the TE region file indentified by software EDTA
