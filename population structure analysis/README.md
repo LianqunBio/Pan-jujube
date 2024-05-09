@@ -1,4 +1,4 @@
-### Step1 Constructing neighbour-joining phylogenetic tree utilizing all the snp loci
+### Step1 Constructing neighbour-joining phylogenetic tree utilizing all the snp loci (TE-excluded)
 
 ```
 ~/software/VCF2Dis-1.50/bin/VCF2Dis -i input.vcf -o p_dis.mat -s sample.list # calculating the distance matrix using software VCF2Dis
@@ -11,7 +11,7 @@ Y # accept all the parameter setting
 ```
 The output newick file by phylip can be uploaded into software MEGA6.0 for further adjusting and coloring.
 
-### Step2 Structure analysis utilizing all the snp loci after LD-pruned
+### Step2 Structure analysis utilizing all the snp loci (TE-excluded) after LD-pruned
 
 ```
 python3 genotype2ped_map.py -i input.snp.genotype -IND sample.list  -o1 example.ped -o2 example.map
@@ -42,7 +42,7 @@ admixture -j3 --cv ld.miss.filterd.example.bed 20 | tee log20.out
 ```
 Output file can be visulized by Excel.
 
-### Step3 PCA analysis
+### Step3 PCA analysis (TE-excluded)
 
 ```
 python3 for_genotype.py -i filtered.genotype -o1 genotype -o2 SNP_info
@@ -65,4 +65,22 @@ outliersigmathresh: 6
 qtmode: 0
 ```
 
+
+### Step4 LD-decay analysis using all the snp loci (TE-excluded)
+```
+PopLDdecay -InVCF  all.snp.vcf.gz  -OutStat Wild.stat.gz -SubPop Wild.list
+PopLDdecay -InVCF  all.snp.vcf.gz  -OutStat C-Sub1.stat.gz -SubPop C-Sub1.list
+PopLDdecay -InVCF  all.snp.vcf.gz  -OutStat C-Sub2.stat.gz -SubPop C-Sub2.list
+PopLDdecay -InVCF  all.snp.vcf.gz  -OutStat C-Sub3.stat.gz -SubPop C-Sub3.list
+PopLDdecay -InVCF  all.snp.vcf.gz  -OutStat C-Sub4.stat.gz -SubPop C-Sub4.list
+PopLDdecay -InVCF  all.snp.vcf.gz  -OutStat C-Sub4.stat.gz -SubPop C-Sub4.list
+
+~/software/PopLDdecay-3.41/bin/Plot_MultiPop.pl -inList  file.list  -output Fig # graph LD-decay figure.  file.list as follows:
+~/Wild.stat.gz	Wild
+~/C-Sub1.stat.gz C-Sub1
+~/C-Sub2.stat.gz C-Sub2
+~/C-Sub3.stat.gz C-Sub3
+~/C-Sub4.stat.gz C-Sub4
+~/C-Sub5.stat.gz C-Sub1
+```
 
