@@ -41,3 +41,28 @@ admixture -j3 --cv ld.miss.filterd.example.bed 19 | tee log19.out
 admixture -j3 --cv ld.miss.filterd.example.bed 20 | tee log20.out
 ```
 Output file can be visulized by Excel.
+
+### Step3 PCA analysis
+
+```
+python3 for_genotype.py -i filtered.genotype -o1 genotype -o2 SNP_info
+~/software/EIG-7.2.1/src/eigensrc/smartpca -p zao_par # zao_par: the configuration file
+perl ~/software/EIG-6.0.1/bin/ploteig -i zao.evec -c 1:2 -p Wild:Cultivated:Cultivated_Subgroup_I:Cultivated_Subgroup_II:Cultivated_Subgroup_III:Cultivated_Subgroup_IV -x -o zao.xtxt # -p group information (identified according to the result by phylogenetic tree and admixture) # graphing with PC1 and PC2
+
+```
+zao_par configuaratioin file :
+```
+genotypename: genotype
+snpname: SNP_info
+indivname: sample.information
+evecoutname: zao.evec
+evaloutname: zao.eval
+altnormstyle: NO
+numoutevec: 10
+numoutlieriter: 0
+numoutlierevec: 10
+outliersigmathresh: 6
+qtmode: 0
+```
+
+
