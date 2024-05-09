@@ -1,7 +1,7 @@
-### Step1 Constructing neighbour-joining phylogenetic tree utilizing all the snp loci (TE-excluded)
+### Step1 Construct neighbour-joining phylogenetic tree utilizing all the snp loci (TE-excluded)
 
 ```
-~/software/VCF2Dis-1.50/bin/VCF2Dis -i input.vcf -o p_dis.mat -s sample.list # calculating the distance matrix using software VCF2Dis
+~/software/VCF2Dis-1.50/bin/VCF2Dis -i input.vcf -o p_dis.mat -s sample.list # calculate the distance matrix using software VCF2Dis
 phylip neighbor # For getting NJ-tree, we employed phylip-neigbor algorithm, the parameter are followed
 p_dis.mat # input file name
 I # for sequential format file
