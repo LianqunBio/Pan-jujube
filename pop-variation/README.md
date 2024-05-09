@@ -46,3 +46,9 @@ python3 exclude.TE.py # input the TE region file indentified by software EDTA
 python3 transfer.py -i TE.excluded.snp.vcf -o TE.excluded.snp.genotype # transfer the vcf file into gneotype format for subsequently analysis
 python3 extract.genotype.py -i TE.excluded.snp.genotype -all all.sample.list -part part.sample.list -o part.snp.genotype # extract part sample genotype information
 ```
+
+### Step6, snp and indel annotation
+```
+for i in {00..12}; do java -Xmx20g -jar ~/snpEff.jar jujube chr$i.vcf > chr$i.output; done
+```
+
