@@ -21,6 +21,6 @@ jellyfish histo -h 100000 -t 1 kmer_counts > k19.reads.histo
 
 ```
 ~/software/juicer-master/scripts/juicer.sh -g SampleID -d ~/03_anchor/01-Z95-v2 -D ~/software/juicer-master -z SampleID.contig.version2.fa -p chr.len.file -t 5
-~/software/3d-dna-master/run-asm-pipeline.sh -r 2 ./reference/SampleID.contig.version2.fa ./aligned/merged_nodups.txt
+~/software/3d-dna-master/run-asm-pipeline.sh -r 0 ./reference/SampleID.contig.version2.fa ./aligned/merged_nodups.txt
 ~/software/3d-dna-master/run-asm-pipeline-post-review.sh -r SampleID-check2.filterd.0.review.assembly ./reference/SampleID.filterd.fa ./aligned/merged_nodups.txt  > rerun.log
 ```
