@@ -1,2 +1,2 @@
 # Pan-jujube
-The repository of all the commands and scripts that have been used in pan-jujube project
+The repository of  commands and scripts that have been used in pan-jujube project
