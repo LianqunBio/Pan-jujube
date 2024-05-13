@@ -1,13 +1,10 @@
-### Step1 Construct neighbour-joining phylogenetic tree utilizing all the snp loci (TE-excluded)
+### Step1 Construct phylogenetic tree utilizing all the snp loci (TE-excluded)
 
 ```
-~/software/VCF2Dis-1.50/bin/VCF2Dis -i input.vcf -o p_dis.mat -s sample.list # calculate the distance matrix using software VCF2Dis
-phylip neighbor # For getting NJ-tree, we employed phylip-neigbor algorithm, the parameter are followed
-p_dis.mat # input file name
-I # for sequential format file
-O # set outgroup sample
-1509 # the number of outgroup sample
-Y # accept all the parameter setting
+python3 overlap.ld.prune.py # overlap the result of TE-excluded vcf and LD-pruned loci 
+python3 ~/software/vcf2phylip-master/vcf2phylip.py -m 20 -o M68 -i all.ld.te.vcf # transform vcf to phylip format
+python3 phylip2fasta.py
+fasttree -nt -gtr -fastest out.fa > all.tree 
 ```
 The output newick file by phylip can be uploaded into software MEGA6.0 for further adjusting and coloring.
 
