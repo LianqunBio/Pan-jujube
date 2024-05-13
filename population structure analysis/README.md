@@ -70,7 +70,7 @@ PopLDdecay -InVCF  all.snp.vcf.gz  -OutStat C-Sub1.stat.gz -SubPop C-Sub1.list
 PopLDdecay -InVCF  all.snp.vcf.gz  -OutStat C-Sub2.stat.gz -SubPop C-Sub2.list
 PopLDdecay -InVCF  all.snp.vcf.gz  -OutStat C-Sub3.stat.gz -SubPop C-Sub3.list
 PopLDdecay -InVCF  all.snp.vcf.gz  -OutStat C-Sub4.stat.gz -SubPop C-Sub4.list
-PopLDdecay -InVCF  all.snp.vcf.gz  -OutStat C-Sub4.stat.gz -SubPop C-Sub4.list
+PopLDdecay -InVCF  all.snp.vcf.gz  -OutStat C-Sub5.stat.gz -SubPop C-Sub5.list
 
 ~/software/PopLDdecay-3.41/bin/Plot_MultiPop.pl -inList  file.list  -output Fig # graph LD-decay figure.  file.list as follows:
 ~/Wild.stat.gz	Wild
@@ -78,6 +78,6 @@ PopLDdecay -InVCF  all.snp.vcf.gz  -OutStat C-Sub4.stat.gz -SubPop C-Sub4.list
 ~/C-Sub2.stat.gz C-Sub2
 ~/C-Sub3.stat.gz C-Sub3
 ~/C-Sub4.stat.gz C-Sub4
-~/C-Sub5.stat.gz C-Sub1
+~/C-Sub5.stat.gz C-Sub5
 ```
 
