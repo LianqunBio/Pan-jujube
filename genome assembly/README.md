@@ -17,6 +17,13 @@ jellyfish histo -h 100000 -t 1 kmer_counts > k19.reads.histo
 ~/miniconda3/envs/py27/bin/busco -i input.contig.fa  -l embryophyta_odb10 -o out.busco -m geno
 ```
 
+### LAI assessment for genome
+
+```
+~/software/LTR_FINDER_parallel-1.1/bin/LTR_FINDER.x86_64-1.0.7/ltr_finder  -C -D 15000 -d 1000 -L 7000 -l 100 -p 20 -M 0.85 Ref.fa > out.scn
+~/software/LTR_retriever-master/LTR_retriever -threads 10 -genome Ref.fa -infinder out.scn
+```
+
 ### Genome anchoring
 
 ```
