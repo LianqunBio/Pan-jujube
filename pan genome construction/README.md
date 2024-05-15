@@ -19,7 +19,7 @@ python3 extract.freq.py
 
 ### ka/ks calculation
 ```
-python3 select.longest.cds.py # select longest seq for each accessions in shell orthogroup
+python3 select.longest.cds.py # select longest seq for each accessions in each orthogroup
 python3 generate.homologs.file.py -group longest.tem1.Orthogroups.tsv # generate commands for each orthogroup, using this script, the following command will be printed
 ~/software/ParaAT2.0/ParaAT.pl -h homologs.file -n all.cds.line.fa -a all.pep.line.fa -p proc -m muscle -k -o Out.result -format axt
 python3 split.value.py # statistic information with different genome number
