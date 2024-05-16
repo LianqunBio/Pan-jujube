@@ -42,6 +42,12 @@ for i in `cat phenotype.list`; do emmax-intel64 -v -d 10 -t filterd_all.final.ge
 python prepare_input_qqman.py -i output.EMMAX.ps -o input
 /home/lianqun/miniconda3/bin/R < qqman.testversion2.R --vanilla
 ```
+
+### Threshold calculation
+```
+java -jar -Xms256m -Xmx3300m gec.jar --effect-number --maf 0.05 --linkage-file filterd_all.final.genotype --genome --out filterd_all.final.genotype.effect # filterd_all.final.genotype is the prefix of input file, all the input file can be linked from the dictory of GWAS analysis.
+```
+
 ### FDR test for GWAS result
 ```
 grep -v chr00 input.EMMAX.ps > inputfile.txt
