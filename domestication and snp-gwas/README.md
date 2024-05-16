@@ -17,6 +17,14 @@ for i in {01..12}; do grep chr$i ../sweep_regine > chr$i.sweep.regine; done
 R < pai.curve.line.R --vanilla
 R < pai_lines_graph.R --vanilla
 ```
+
+### Dxy analysis
+
+```
+pixy --stats dxy --vcf TE.excluded.snp.vcf.gz --populations popfile.txt --window_size 100000 --n_cores 10 #  the pop-vcf file should be gziped and indexed in advance for Dxy analysis
+```
+
+
 ### GWAS analysis
 
 ```
