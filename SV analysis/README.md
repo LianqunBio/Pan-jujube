@@ -17,7 +17,7 @@ python3 annotation.SV.py -vcf domestication.all.SV.vcf.xls -gff3 Ref.gff3 -o dom
 ```
 python3 deal.vcf.format.py -syri  SampleID.syri.vcf -Ref  Ref.fa -Alt Qeury.fa -o SampleID.out # only extract 'DUP','INS','DEL','CPG','CPL'
 SURVIVOR merge inputfile 100 1 1 0 0 50 merged.vcf # merge all the vcf
-python3 ~/miniconda3/pkgs/paragraph-2.3-h8908b6f_0/bin/multigrmpy.py -i merged.vcf -m mfile -r Ref.fa -o output --threads 5 # mfile contains the file path of all the bam file used to genotyping the reference-based SV
+python3 ~/miniconda3/pkgs/paragraph-2.3-h8908b6f_0/bin/multigrmpy.py -i merged.vcf -m mfile -r Ref.fa -o output --threads 5 # mfile contains the file path, depth and reads length information of all the bam file used to genotyping the reference-based SV
 ```
 ### SV-gwas
 ```
