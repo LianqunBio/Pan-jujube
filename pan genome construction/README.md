@@ -6,12 +6,12 @@ orthofinder -f pep.data -t 12 -a 50 -T iqtree -M msa -ot # all the genome used t
 the files in dictory pep.data:
 Dongzao.pep.fa
 JunT2T.pep.fa
-S21.CDS.protein.fa
+S21.pep.fa
 SuanFLS.pep.fa
 SuanT2T.pep.fa
-Z203.CDS.protein.fa
-Z94.CDS.protein.fa
-Z95.CDS.protein.fa
+Z203.pep.fa
+Z94.pep.fa
+Z95.pep.fa
 most basic information was deposited in the file name "Statistics_Overall.tsv". Some other information used in paper can be extracted by the following scripts:
 python3 get.proportion.py
 python3 extract.freq.py
