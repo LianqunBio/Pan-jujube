@@ -6,12 +6,7 @@ cat  *delta.filter > all.delta.filter
 show-coords -THrd  all.delta.filter > all.filtered.coords # all.delta.filter means the merged result from all the chromosome result.
 python3 ~/softwares/syri1.5/bin/syri -c all.filtered.coords -d all.delta.filter -r Ref.fa -q Query.fa
 ```
-### Domestication-related SVs
 
-```
-python3 overlap.py # Here, overlap the sweep region information and detected SVs between Z95 (Cultivate) and S21 (Wild)
-python3 annotation.SV.py -vcf domestication.all.SV.vcf.xls -gff3 Ref.gff3 -o domestication.sv.annotation.out
-```
 ### SV merging and pop-sv detection
 
 ```
