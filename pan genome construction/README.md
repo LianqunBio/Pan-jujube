@@ -15,7 +15,7 @@ Z95.pep.fa
 most basic information was deposited in the file name "Statistics_Overall.tsv". Some other information used in paper can be extracted by the following scripts:
 python3 get.proportion.py
 python3 extract.freq.py
-```
+``` 
 
 ### ka/ks calculation
 ```
