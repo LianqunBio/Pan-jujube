@@ -22,7 +22,7 @@ bgzip -f SampleID.sample.gvcf # compress the gvcf file.
 tabix -f -p vcf SampleID.sample.gvcf.gz # create index file for compressed gvcf file.
 ```
 
-### Step3, Joint calling
+### Step3, Joint calling 
 
 ```
 for i in {01..12}
