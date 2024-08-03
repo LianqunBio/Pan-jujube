@@ -2,7 +2,7 @@
 ```
 nucmer --maxmatch -t 5 -c 90 -l 50 Ref.fa Query.Chr$i.fa # To accelerate the process, the query genome can be splited into chromosome.
 delta-filter -i 90 -l 100 -r -q out.delta > delta.filter
-cat  *delta.filter > all.delta.filter
+cat  *delta.filter > all.delta.filter 
 show-coords -THrd  all.delta.filter > all.filtered.coords # all.delta.filter means the merged result from all the chromosome result.
 python3 ~/softwares/syri1.5/bin/syri -c all.filtered.coords -d all.delta.filter -r Ref.fa -q Query.fa
 ```
