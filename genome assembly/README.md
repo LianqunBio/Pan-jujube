@@ -6,7 +6,7 @@ jellyfish histo -h 100000 -t 1 kmer_counts > k19.reads.histo
 # upload the result file to online website: http://qb.cshl.edu/genomescope/genomescope2.0/analysis for visualization
 ```
 ### Genome assembly
-
+ 
 ```
 ~/software/hifiasm-master/hifiasm -t 10 -o out.asm2 --primary --h1 FDHC210000858-1a_L1_1_clean.rd.fq.gz --h2 FDHC210000858-1a_L1_2_clean.rd.fq.gz  input.HiFi.fq > asm.log
 ```
