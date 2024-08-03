@@ -31,17 +31,8 @@ gffread all_stringtie.gtf -o all_stringtie.gff3
 ```
 braker.pl --cores=48 --overwrite --species=Jujube --genome=input.softmask.fa --bam=all_sorted.bam --softmasking --gff3 
 ```
-## 2. Run maker
-```
-ln -s ~/input.genome.fa.mod.EDTA.TElib.fa ./
-ln -s ~/stringtie/all_stringtie.gff3 ./
-ln -s ~/input.fa ./
-ln -s ~/published.jujube.pep.fa ./
-ln -s ~/published.jujube.pep.fa ./
-ln -s ~/published.jujube.pep.fa ./
-```
-
-### Round 1
+## Run maker
+#### Round 1
 
 #### Generate config file
 ```
