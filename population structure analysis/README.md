@@ -18,7 +18,7 @@ python merge.py # extract the overlapping loci information
 python3 genotype2ped_map.py -i ld.filterd.genotype -IND sample.list -o1 ld.miss.filterd.example.ped -o2 ld.miss.filterd.example.map
 plink --file ld.miss.filterd.example --make-bed --out ld.miss.filterd.example
 admixture -j3 --cv ld.miss.filterd.example.bed 2 | tee log2.out
-admixture -j3 --cv ld.miss.filterd.example.bed 3 | tee log3.out
+admixture -j3 --cv ld.miss.filterd.example.bed 3 | tee log3.out 
 admixture -j3 --cv ld.miss.filterd.example.bed 4 | tee log4.out
 admixture -j3 --cv ld.miss.filterd.example.bed 5 | tee log5.out
 admixture -j3 --cv ld.miss.filterd.example.bed 6 | tee log6.out
