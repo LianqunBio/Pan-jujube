@@ -13,7 +13,7 @@ python add_code.py
 python3 find_gene_in_sweep_regine.py -i1 sweep-regine-info.xls -i2 Ref.gff3 -i3 Annotation.infor.txt -o gene_IN_sweep_regine.xls
 # graph pai ratio and curve lines
 for i in {01..12}; do grep chr$i ../all_ritio.poly > chr$i.raw.poly; done
-for i in {01..12}; do grep chr$i ../sweep_regine > chr$i.sweep.regine; done
+for i in {01..12}; do grep chr$i ../sweep_regine > chr$i.sweep.regine; done 
 R < pai.curve.line.R --vanilla
 R < pai_lines_graph.R --vanilla
 ```
