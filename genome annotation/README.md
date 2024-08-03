@@ -2,9 +2,11 @@
 
 
 ## EDTA repeat annotation
+```
 export PATH=~/miniconda3/envs/EDTA/bin:$PATH
-perl ~/software/EDTA/EDTA.pl --genome input.fa  --overwrite 1 --sensitive 1 --anno 1  --threads 30 --repeatmasker ~/software/RepeatMasker_4.10/v2_RepeatMasker > EDTA.logfile
 
+perl ~/software/EDTA/EDTA.pl --genome input.fa  --overwrite 1 --sensitive 1 --anno 1  --threads 30 --repeatmasker ~/software/RepeatMasker_4.10/v2_RepeatMasker > EDTA.logfile
+```
 ## RNA-Seq assembly
 
 ### Hisat2 index-building
